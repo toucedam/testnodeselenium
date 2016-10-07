@@ -38,15 +38,15 @@ class BasePage {
 
 	goTo (pageName) {
 		return this._navigateTo(pageName)
-		.then((result)=> {
-			let waiterSelector = this.getPageWaiterSelector(pageName);
+			.then((result)=> {
+				let waiterSelector = this.getPageWaiterSelector(pageName);
 
-			if (waiterSelector) {
-				return this.waitForDisplayed(waiterSelector, timeouts.visible_elements);
-			}
+				if (waiterSelector) {
+					return this.waitForDisplayed(waiterSelector, timeouts.visible_elements);
+				}
 
-			return result;
-		})
+				return result;
+			});
 	}
 
 	setValue (locator,value) {

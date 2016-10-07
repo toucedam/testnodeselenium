@@ -50,7 +50,7 @@ class AddUser extends BasePage {
 	constructor (webdriver) {
 		super(webdriver);
 		this.navigationSelectors = navigationSelectors;
-		}
+	}
 
 	sendName (username) {
  		this.driver.findElement (By.css(navigationSelectors.inputName)).sendKeys(username);
@@ -70,14 +70,13 @@ class AddUser extends BasePage {
 		}*/
 
 	createUser (name,lastname,email) {
-
-	this.sendName(name);
-	this.sendLastName(lastname);
-	this.sendEmail(email);
-	//this.selectRolBasic();
-	this.goTo('adduserAndSendInvitation');
-	return this.driver.wait(until.elementLocated(By.css(addUserWithoutInivitation)),50000);
-		}
+		this.sendName(name);
+		this.sendLastName(lastname);
+		this.sendEmail(email);
+		//this.selectRolBasic();
+		this.goTo('adduserAndSendInvitation');
+		return this.driver.wait(until.elementLocated(By.css(addUserWithoutInivitation)),50000);
 	}
+}
 
 export default AddUser;
